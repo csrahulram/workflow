@@ -1,0 +1,31 @@
+.container-wrapper{
+    
+    margin: 10px 5px;
+    padding: 15px;
+    margin-bottom: 15px;
+    color: #200707;
+    cursor: pointer;
+    display: flex;
+    margin-top: 90px;
+    
+
+}
+.card{
+width: 300px;
+    /* padding: 30px; */
+    height: 200px;
+    box-shadow: 0 0 14px 0px #d9edf7;
+    background-color: #d9edf7;
+    padding: 10px;
+    font-weight: bold;
+    margin-right: 60px;
+    font-size: 40px;
+    text-align: center;
+    font-weight: bold;
+     color: #428bca;
+}
+
+.name{
+    text-transform: capitalize;
+    margin-top: 33%;
+}

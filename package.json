@@ -1,0 +1,35 @@
+{
+  "name": "workflow",
+  "version": "1.0.0",
+  "env": "dev",
+  "description": "Workflow manager",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "build": "node docs.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "//pc419/repo/workflow"
+  },
+  "keywords": [
+    "workflow",
+    "manager",
+    "task",
+    "manager"
+  ],
+  "author": "Naveen",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.18.1",
+    "express": "^4.15.4",
+    "express-session": "^1.15.6",
+    "mongodb": "^2.2.33",
+    "mongoose": "^4.11.12"
+  },
+  "devDependencies": {
+    "express-api-doc": "0.0.12"
+  }
+}

@@ -1,0 +1,79 @@
+{
+    "validator": {
+        "jsonSchema": {
+            "bsonType": "object",
+            "required": [
+                "username",
+                "password",
+                "first_name",
+                "last_name",
+                "gender",
+                "created_on",
+                "modified_on",
+                "status",
+                "role",
+                "email",
+                "phone",
+                "profile_pic",
+                "description"
+            ],
+            "properties": {
+                "username": {
+                    "bsonType": "string",
+                    "description": "must be a string and is required"
+                },
+                "password": {
+                    "bsonType": "string",
+                    "description": "must be a string and is required"
+                },
+                "first_name": {
+                    "bsonType": "string",
+                    "description": "must be a string and is required"
+                },
+                "last_name": {
+                    "bsonType": "string",
+                    "description": "must be a string and is required"
+                },
+                "gender": {
+                    "bsonType": "string",
+                    "description": "must be a string and is required"
+                },
+                "role":{
+                    "enum": [0, 1, 2],
+                    "description": "can only be one of the enum values and is required"
+                },
+                "created_on": {
+                    "bsonType": "string",
+                    "description": "must be a string and is required"
+                },
+                "modified_on": {
+                    "bsonType": "string", 
+                    "description": "must be a string and is required"
+                },
+                "status": {
+                    "enum": [
+                        "active",
+                        "inactive"
+                    ],
+                    "description": "can only be one of the enum values and is required"
+                },
+                "email": {
+                    "bsonType": "string",
+                    "description": "must be a string and is required"
+                },
+                "phone": {
+                    "bsonType": "string",
+                    "description": "must be a string and is required"
+                },
+                "profile_pic": {
+                    "bsonType": "string",
+                    "description": "must be a string and is not required"
+                },
+                "description": {
+                    "bsonType": "string",
+                    "description": "must be a string and is not required"
+                }
+            }
+        }
+    }
+}

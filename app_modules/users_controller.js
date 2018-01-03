@@ -81,14 +81,11 @@ module.exports = function (app, urlencodedParser, db) {
             query.data.first_name = req.body.first_name;
             query.data.last_name = req.body.last_name;
             query.data.gender = req.body.gender;
-            query.data.description = req.body.description || '';
-            query.data.status = req.body.status;
+            query.data.status = req.body.status || 'active';
+            query.data.role = parseInt(req.body.role);
             query.data.phone = req.body.phone;
             query.data.email = req.body.email;
-            query.data.profile_pic = req.body.profile_pic;
-            query.data.role = parseInt(req.body.role);
-            query.data.created_on = Date.now().toString();
-            query.data.modified_on = Date.now().toString();
+            
 
             db.create(query, function (data) {
                 if (data == 200) {

@@ -8,14 +8,10 @@
                 "first_name",
                 "last_name",
                 "gender",
-                "created_on",
-                "modified_on",
                 "status",
                 "role",
                 "email",
-                "phone",
-                "profile_pic",
-                "description"
+                "phone"
             ],
             "properties": {
                 "username": {
@@ -38,24 +34,13 @@
                     "bsonType": "string",
                     "description": "must be a string and is required"
                 },
-                "role":{
-                    "enum": [0, 1, 2],
-                    "description": "can only be one of the enum values and is required"
-                },
-                "created_on": {
-                    "bsonType": "string",
-                    "description": "must be a string and is required"
-                },
-                "modified_on": {
-                    "bsonType": "string", 
-                    "description": "must be a string and is required"
-                },
                 "status": {
-                    "enum": [
-                        "active",
-                        "inactive"
-                    ],
+                    "bsonType": "string",
                     "description": "can only be one of the enum values and is required"
+                },
+                "role":{
+                    "bsonType": "number",
+                    "description": "can only be one of the number values and is required"
                 },
                 "email": {
                     "bsonType": "string",
@@ -64,14 +49,6 @@
                 "phone": {
                     "bsonType": "string",
                     "description": "must be a string and is required"
-                },
-                "profile_pic": {
-                    "bsonType": "string",
-                    "description": "must be a string and is not required"
-                },
-                "description": {
-                    "bsonType": "string",
-                    "description": "must be a string and is not required"
                 }
             }
         }

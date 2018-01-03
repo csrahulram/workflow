@@ -8,6 +8,7 @@
     "start": "node app.js",
     "dev": "nodemon app.js",
     "build": "node docs.js",
+    "windows_dev":"start_mongo.bat",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

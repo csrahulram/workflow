@@ -22,9 +22,9 @@ MongoClient.connect(uri, function (err, db_obj) {
             fs.readdirSync('schema', "utf8").forEach(function (schema) {
                 var doc = fs.readFileSync('./schema/' + schema, 'utf8');
                 var json = JSON.parse(doc);
-                if (json.validator) {
+                //if (json.validator) {
                     db_obj.createCollection(schema.replace('.json', ''), json);
-                }
+                //}
             });
         }
     });

@@ -1,0 +1,32 @@
+.lightbox{
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.popup{
+    position: absolute;
+    margin-left: 50%;
+    margin-top: 50%;
+    background-color: white;
+    transform: translateX(-50%) translateY(-50%);
+    -webkit-box-shadow: 0px 10px 30px 3px rgba(0,0,0,0.73);
+    -moz-box-shadow: 0px 10px 30px 3px rgba(0,0,0,0.73);
+    box-shadow: 0px 10px 30px 3px rgba(0,0,0,0.73);
+}
+
+.hide{
+    display: none;
+}
+
+.popup-close{
+    background-image: url(../../img/icons8-close-window-50.png);
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+}

@@ -8,7 +8,6 @@ var MongoClient = require('mongodb').MongoClient;
 var fs = require('fs');
 
 var session = require('express-session');
-
 app.use(session({ secret: "workflow" }));
 
 require('./app_modules/users_controller')(app, urlencodedParser, db, jsonParser);
@@ -39,29 +38,29 @@ app.get('/', function (req, res) {
     res.sendFile(__dirname + '/public/index.html');
 });
 
-app.get('/docs', function (req, res) {
-    res.sendFile(__dirname + '/docs/index.html');
-});
+// app.get('/docs', function (req, res) {
+//     res.sendFile(__dirname + '/docs/index.html');
+// });
 
 
 app.listen(3000, function () {
     console.log('Example app listening on port 3000!')
 });
 
-var html = ''
-app._router.stack.forEach(function (methods) {
-    if (methods.route) {
-        html += '<div>';
-        html += ''
-        html += '<h3>Path :' +  methods.route.path + '</h3>';
-        for(var i in methods.route.methods){
-            html += '<h4>Type:' + i + '</h4>';
-        }
+// var html = ''
+// app._router.stack.forEach(function (methods) {
+//     if (methods.route) {
+//         html += '<div>';
+//         html += ''
+//         html += '<h3>Path :' +  methods.route.path + '</h3>';
+//         for(var i in methods.route.methods){
+//             html += '<h4>Type:' + i + '</h4>';
+//         }
 
-        html += '</div>';
-    }
-});
+//         html += '</div>';
+//     }
+// });
 
-fs.writeFile('./docs/index.html', html);
+// fs.writeFile('./docs/index.html', html);
 
 module.exports = app;

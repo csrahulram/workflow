@@ -26,7 +26,10 @@ module.exports.delete = function (query, cb) {
     var col = db.collection(query.collection);
     console.log(query)
     col.deleteOne(query.data).then(function (err, docs) {
-        console.log(docs);
-        cb(200);
+        if(docs != undefined){
+            cb(409);
+        } else {
+            cb(200);
+        }
     });
 };

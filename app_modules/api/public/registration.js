@@ -2,7 +2,7 @@ var db;
 
 module.exports = function (app, urlencodedParser, db) {
     this.db = db;
-    app.post('/registration', urlencodedParser, function (req, res) {
+    app.post('/api/registration', urlencodedParser, function (req, res) {
         validate(req, res, (validation)=>{
             if(validation == true){
                 register(req, res);
@@ -12,7 +12,6 @@ module.exports = function (app, urlencodedParser, db) {
 }
 
 function validate(req, res, callback){
-
     //Checks the username exists or not
     if(!req.body.username){
         var response = {};
@@ -38,7 +37,9 @@ function validate(req, res, callback){
         response.data = null;
         res.send(response);
         callback(false);
-    } else if()
+    } else {
+        callback(true);
+    }
 }
 
 

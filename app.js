@@ -3,7 +3,7 @@ var bodyParser = require('body-parser');
 var jsonParser = bodyParser.json();
 var urlencodedParser = bodyParser.urlencoded({ extended: false });
 var app = express();
-var db = require('./app_modules/db_handler.js');
+var db = require('./app_modules/lib/db_handler.js');
 var MongoClient = require('mongodb').MongoClient;
 var fs = require('fs');
 

@@ -10,10 +10,14 @@ var fs = require('fs');
 var session = require('express-session');
 app.use(session({ secret: "workflow" }));
 
-require('./app_modules/users_controller')(app, urlencodedParser, db, jsonParser);
+//Load all the app modules and local libraries
+require('./app_modules/lib/utility.js')(app, urlencodedParser, db, jsonParser);
+require('./app_modules/api/public/registration.js')(app, urlencodedParser, db, jsonParser);
 
 var uri = "mongodb://localhost:27017/workflow";
 
+
+//Create schema automatically if the environment is new
 MongoClient.connect(uri, function (err, db_obj) {
     db.setDatabase(db_obj);
     db_obj.listCollections().toArray(function (err, data) {
@@ -21,46 +25,21 @@ MongoClient.connect(uri, function (err, db_obj) {
             fs.readdirSync('schema', "utf8").forEach(function (schema) {
                 var doc = fs.readFileSync('./schema/' + schema, 'utf8');
                 var json = JSON.parse(doc);
-                //if (json.validator) {
-                    db_obj.createCollection(schema.replace('.json', ''), json);
-                //}
+                db_obj.createCollection(schema.replace('.json', ''), json);
             });
         }
     });
 });
 
-
-
+//Express server configuration and API
 app.use(express.static(__dirname + '/public'));
-app.use(express.static(__dirname + '/docs'));
 
 app.get('/', function (req, res) {
     res.sendFile(__dirname + '/public/index.html');
 });
 
-// app.get('/docs', function (req, res) {
-//     res.sendFile(__dirname + '/docs/index.html');
-// });
-
-
 app.listen(3000, function () {
     console.log('Example app listening on port 3000!')
 });
-
-// var html = ''
-// app._router.stack.forEach(function (methods) {
-//     if (methods.route) {
-//         html += '<div>';
-//         html += ''
-//         html += '<h3>Path :' +  methods.route.path + '</h3>';
-//         for(var i in methods.route.methods){
-//             html += '<h4>Type:' + i + '</h4>';
-//         }
-
-//         html += '</div>';
-//     }
-// });
-
-// fs.writeFile('./docs/index.html', html);
 
 module.exports = app;

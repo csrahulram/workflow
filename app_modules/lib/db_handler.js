@@ -12,24 +12,19 @@ module.exports.read = function (query, cb) {
     });
 };
 
-module.exports.create = function (query, cb) {
+module.exports.createOne = function (query, cb) {
     var col = db.collection(query.collection);
     console.log(JSON.stringify(query.data));
     col.insertOne(query.data).then(function (err, docs) {
-        console.log('Insert')
-        console.log(err);
-        cb(200);
+        console.log('One document inserted successfully');
+        console.log(docs);
+        cb(docs);
     });
 };
 
 module.exports.delete = function (query, cb) {
     var col = db.collection(query.collection);
-    console.log(query)
     col.deleteOne(query.data).then(function (err, docs) {
-        if(docs != undefined){
-            cb(409);
-        } else {
-            cb(200);
-        }
+        
     });
 };

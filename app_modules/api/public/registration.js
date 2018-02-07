@@ -14,6 +14,11 @@ module.exports = (app, urlencodedParser, db) => {
                     if(unique){
                         register(req, res, (registration)=>{
                             res.send(registration);
+                            var log = {};
+                            log.type = 'Registration'
+                            log.subject = 'New user registration.'
+                            log.time = Date.now();
+                            _app.log(log);
                         })
                     } else {
                         var unique = {};
@@ -70,13 +75,13 @@ function register(req, res, callback) {
     query.data = {};
     query.data.username = req.body.username;
     query.data.email = req.body.email;
-    _db.createOne(query, (data)=>{
+    _db.insertOne(query, (data)=>{
         var query = {};
         query.collection = 'auth';
         query.data = {};
         query.data.username = req.body.username;
         query.data.password = req.body.password;
-        _db.createOne(query, (data)=>{
+        _db.insertOne(query, (data)=>{
             var response = {};
             response.message = 'Created';
             response.code = 201;

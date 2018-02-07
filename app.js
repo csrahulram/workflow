@@ -7,12 +7,25 @@ var db = require('./app_modules/lib/db_handler.js');
 var MongoClient = require('mongodb').MongoClient;
 var fs = require('fs');
 
+// 
+
+// var token = jwt.sign({username:'Rahul', password:'ram123'}, 'app-secret');
+
+// console.log(token);
+
+// jwt.verify(token, 'app-secret', function(e, d){
+//     console.log(d);
+// });
+
+
+
 var session = require('express-session');
 app.use(session({ secret: "workflow" }));
 
 //Load all the app modules and local libraries
 require('./app_modules/lib/utility.js')(app, urlencodedParser, db, jsonParser);
 require('./app_modules/api/public/registration.js')(app, urlencodedParser, db, jsonParser);
+require('./app_modules/api/public/authentication.js')(app, urlencodedParser, db, jsonParser);
 
 var uri = "mongodb://localhost:27017/workflow";
 

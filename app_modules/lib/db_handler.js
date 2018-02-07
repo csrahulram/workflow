@@ -5,26 +5,51 @@ module.exports.setDatabase = function (db_obj) {
     db = db_obj;
 };
 
-module.exports.read = function (query, cb) {
+module.exports.index = function (query, cb) {
     var col = db.collection(query.collection);
     col.find(query.data).toArray(function (err, docs) {
         cb(docs);
     });
 };
 
-module.exports.createOne = function (query, cb) {
+module.exports.insertOne = function (query, cb) {
     var col = db.collection(query.collection);
-    console.log(JSON.stringify(query.data));
-    col.insertOne(query.data).then(function (err, docs) {
-        console.log('One document inserted successfully');
-        console.log(docs);
+    col.insert(query.data, (err, docs)=>{
         cb(docs);
     });
 };
 
-module.exports.delete = function (query, cb) {
+module.exports.insertMany = function (query, cb) {
+    var col = db.collection(query.collection);
+    col.insertMany(query.data).then(function (err, docs) {
+        cb(docs);
+    });
+};
+
+module.exports.updateOne = function (query, cb) {
+    var col = db.collection(query.collection);
+    col.updateOne(query.data).then(function (err, docs) {
+        cb(docs);
+    });
+};
+
+module.exports.updateMany = function (query, cb) {
+    var col = db.collection(query.collection);
+    col.updateMany(query.data).then(function (err, docs) {
+        cb(docs);
+    });
+};
+
+module.exports.deleteOne = function (query, cb) {
     var col = db.collection(query.collection);
     col.deleteOne(query.data).then(function (err, docs) {
-        
+        cb(docs);
+    });
+};
+
+module.exports.deleteMany = function (query, cb) {
+    var col = db.collection(query.collection);
+    col.deleteMany(query.data).then(function (err, docs) {
+        cb(docs);
     });
 };

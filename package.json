@@ -8,7 +8,7 @@
     "start": "node app.js",
     "dev": "nodemon app.js",
     "build": "node docs.js",
-    "windows_dev":"start_mongo.bat",
+    "windows_dev": "start_mongo.bat",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -27,10 +27,12 @@
     "body-parser": "^1.18.1",
     "express": "^4.15.4",
     "express-session": "^1.15.6",
+    "jsonwebtoken": "^8.1.1",
     "mongodb": "^2.2.33",
     "mongoose": "^4.11.12"
   },
   "devDependencies": {
+    "chalk": "^2.3.0",
     "express-api-doc": "0.0.12"
   }
 }

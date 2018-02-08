@@ -30,12 +30,9 @@ module.exports = (app, urlencodedParser, db) => {
         _db.insertOne(query, (data)=>{});
     }
 
-    _app.loginAs = (username, password)=>{
-        
-    }
-
-    _app.createToken = (data)=>{
-        var cipher = 'workflow';
-        
+    _app.roles = {
+        admin:()=>{
+            return 'admin';
+        }
     }
 }

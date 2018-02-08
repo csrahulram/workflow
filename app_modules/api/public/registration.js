@@ -81,6 +81,7 @@ function register(req, res, callback) {
         query.data = {};
         query.data.username = req.body.username;
         query.data.password = req.body.password;
+        query.data.role = _app.roles.admin();
         _db.insertOne(query, (data)=>{
             var response = {};
             response.message = 'Created';

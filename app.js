@@ -31,11 +31,11 @@ var uri = "mongodb://localhost:27017/workflow";
 
 
 //Create schema automatically if the environment is new
-MongoClient.connect(uri, function (err, db_obj) {
+MongoClient.connect(uri, (err, db_obj)=>{
     db.setDatabase(db_obj);
-    db_obj.listCollections().toArray(function (err, data) {
+    db_obj.listCollections().toArray((err, data) =>{
         if (!data.length) {
-            fs.readdirSync('schema', "utf8").forEach(function (schema) {
+            fs.readdirSync('schema', "utf8").forEach((schema)=>{
                 var doc = fs.readFileSync('./schema/' + schema, 'utf8');
                 var json = JSON.parse(doc);
                 db_obj.createCollection(schema.replace('.json', ''), json);
@@ -47,11 +47,11 @@ MongoClient.connect(uri, function (err, db_obj) {
 //Express server configuration and API
 app.use(express.static(__dirname + '/public'));
 
-app.get('/', function (req, res) {
+app.get('/', (req, res)=>{
     res.sendFile(__dirname + '/public/index.html');
 });
 
-app.listen(3000, function () {
+app.listen(3000, ()=>{
     console.log('Example app listening on port 3000!')
 });
 

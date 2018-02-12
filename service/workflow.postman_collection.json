@@ -1,0 +1,123 @@
+{
+	"variables": [],
+	"info": {
+		"name": "workflow",
+		"_postman_id": "80041170-170b-495e-02b9-b7d8f7b9e0be",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "public",
+			"description": "",
+			"item": [
+				{
+					"name": "Authentication",
+					"request": {
+						"url": "http://localhost:3000/api/public/auth",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "sampleuser",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "user123",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"description": "This API is used to authenticate the server using JWT."
+					},
+					"response": []
+				},
+				{
+					"name": "Registration",
+					"request": {
+						"url": "http://localhost:3000/api/public/registration",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "sampleuser",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "user123",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "confirm_password",
+									"value": "user123",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "sample@user.com",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"description": "This API is used to register a new user. Username should be unique or the system will not accept the registration details."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "internal",
+			"description": "",
+			"item": [
+				{
+					"name": "Logout",
+					"request": {
+						"url": "http://localhost:3000/api/internal/logout",
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InNhbXBsZXVzZXIiLCJwYXNzd29yZCI6InVzZXIxMjMiLCJpYXQiOjE1MTg0MjU0NDF9.QgYFJCyaawtUE-90NA_5qL6A7ZbJAj-M2WoUDlJVH-w",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": "Logouts and clears the session."
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

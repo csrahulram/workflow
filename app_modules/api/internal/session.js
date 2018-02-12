@@ -8,23 +8,23 @@ module.exports = function (app, urlencodedParser, db) {
     _app.post('/api/internal/logout', urlencodedParser, function (req, res) {
         console.log(req.get('token'));
         var response = {};
-        if(req.session.login){
-            if(req.get('token')){
-                _app.verify(req.get('token'), (valid)=>{
-                    if(valid){
-                        response.code = 200;
-                        response.message = 'OK';
-                        response.detail = 'Logout success.';
-                        response.data = null;
-                    } else {
-                        response.code = 401;
-                        response.message = 'Bad request';
-                        response.detail = 'Invalid token.';
-                        response.data = null;
-                    }
-                    res.send(response);
-                })
+        if (req.session.login) {
+            if (req.get('token')) {
                 
+                //Simple session token validation
+                if (req.session.login.data.token == req.get('token')) {
+                    req.session.login = null;
+                    response.code = 200;
+                    response.message = 'OK';
+                    response.detail = 'Logout success.';
+                    response.data = null;
+                } else {
+                    response.code = 401;
+                    response.message = 'Bad request';
+                    response.detail = 'Invalid token.';
+                    response.data = null;
+                }
+                res.send(response);
             } else {
                 response.code = 400;
                 response.message = 'Bad request';
@@ -32,7 +32,7 @@ module.exports = function (app, urlencodedParser, db) {
                 response.data = null;
                 res.send(response);
             }
-            
+
         } else {
             response.code = 401;
             response.message = 'Unauthorized';

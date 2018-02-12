@@ -44,22 +44,21 @@ function authenticate(username, password, session, callback){
                 var token = jwt.sign({username:username, password:password}, _app.secret);
                 var query = {};
                 query.collection = 'users';
-                query.data = {}
+                query.data = {};
                 query.data.username = username;
 
                 _db.index(query, (list)=>{
                     response.code = 200;
                     response.message = 'OK';
-                    response.detail = 'Valid credentials';
+                    response.detail = 'Login success.';
                     response.data = {'token':token, 'user':list[0]};
-
                     session.login = response;
                     callback(response);
-                })
+                });
             } else {
                 response.code = 401;
                 response.message = 'Unauthorized';
-                response.detail = 'Username and password does not match our database';
+                response.detail = 'Username and password does not match our database.';
                 response.data = null;
                 callback(response);
             }

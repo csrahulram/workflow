@@ -1,4 +1,30 @@
-.header-border {
-    height: 10px;
-    background: brown;
+header {
+    height: 50px;
+    background: #23b8f6;
+}
+
+.navigation{
+    display: flex;
+}
+
+.logo{
+    background-image: url(../../../../img/logo.png);
+    width: 167px;
+    height: 40px;
+    margin-top: 5px;
+    margin-left: 20px;
+    margin-right: 20px;
+    background-size: 40px 40px;
+    color: white;
+    line-height: 40px;
+    padding-left: 55px;
+    font-size: 24px;
+    background-repeat: no-repeat;
+}
+
+.link{
+    line-height: 50px;
+    margin-left: 10px;
+    margin-right: 10px;
+    color: white;
 }

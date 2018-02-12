@@ -11,9 +11,6 @@ module.exports = function (app, urlencodedParser, db) {
         response.code = 400;
         response.message = 'Bad Request';
         response.data = null;
-
-        console.log(req.body.username);
-        console.log(req.body.password);
         
         if(req.body.username == undefined || req.body.username == ''){
             response.detail = 'Username is not found in the request.';
@@ -44,7 +41,7 @@ function authenticate(username, password, session, callback){
         _db.index(query, (result)=>{
             
             if(result.length){
-                var token = jwt.sign({username:username, password:password}, 'workflow');
+                var token = jwt.sign({username:username, password:password}, _app.secret);
                 var query = {};
                 query.collection = 'users';
                 query.data = {}

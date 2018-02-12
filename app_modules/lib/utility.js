@@ -3,8 +3,6 @@ var _app;
 
 var jwt = require('jsonwebtoken');
 
-var token = jwt.sign({username:'Rahul', password:'ram123'}, 'app-secret');
-
 module.exports = (app, urlencodedParser, db) => {
     _db = db;
     _app = app;
@@ -34,5 +32,11 @@ module.exports = (app, urlencodedParser, db) => {
         admin:()=>{
             return 'admin';
         }
+    }
+
+    _app.verify = (token, callback)=>{
+        jwt.verify(token, _app.secret, (err, data)=>{
+            console.log(data);
+        })
     }
 }

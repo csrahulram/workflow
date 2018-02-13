@@ -113,7 +113,7 @@
     });
 
     //Footer load
-    $.event.trigger({
-        type: 'load_footer'
-    });
+    // $.event.trigger({
+    //     type: 'load_footer'
+    // });
 }())

@@ -4,7 +4,8 @@ header {
 }
 
 .navigation{
-    display: flex;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 .logo{
@@ -12,19 +13,22 @@ header {
     width: 167px;
     height: 40px;
     margin-top: 5px;
-    margin-left: 20px;
-    margin-right: 20px;
     background-size: 40px 40px;
     color: white;
     line-height: 40px;
     padding-left: 55px;
     font-size: 24px;
     background-repeat: no-repeat;
+    font-weight: 100;
 }
 
-.link{
+.header-menu{
     line-height: 50px;
-    margin-left: 10px;
-    margin-right: 10px;
     color: white;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.header-menu:hover{
+    background-color: rgba(255, 255, 255, 0.3);
 }

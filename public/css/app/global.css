@@ -30,3 +30,24 @@
     position: absolute;
     right: 0;
 }
+
+.button{
+    cursor: pointer;
+}
+
+.pull-right{
+    float: right;
+}
+
+.pull-left{
+    float: left;
+}
+
+.big{
+    font-size: 65px;
+}
+
+.slim{
+    font-weight: 100;
+}
+

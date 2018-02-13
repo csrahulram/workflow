@@ -8,6 +8,7 @@
 .intro-text{
     margin-top: 64px;
     margin-bottom: 32px;
+    margin-bottom: 70px;
 }
 
 .caption{
@@ -48,4 +49,13 @@
 .info-text{
     margin-top: 40px;
     line-height: 24px;
+}
+
+
+#page_view{
+    position: absolute;
+    top: 50px;
+    bottom: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
 }

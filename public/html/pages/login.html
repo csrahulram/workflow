@@ -1,4 +1,48 @@
-<link rel="stylesheet" href="css/app/pages/home.css"/>
+<link rel="stylesheet" href="css/app/pages/login.css" />
 <div class="page">
-    <h1>Login screen</h1>
+  <div id="login-page" class="login-container card z-depth-4">
+    <form class="login-form" id="login_form">
+      <div class="row">
+        <div class="input-field col s12 center">
+          <img src="img/icons8-login-to-my-account-48.png" alt="" class="circle responsive-img valign profile-image-login">
+          <p class="center login-form-text">Login</p>
+        </div>
+      </div>
+      <div class="input-field col s12">
+        <input id="username" type="text" required="" class="validate">
+        <label for="username" class="center-align">Username</label>
+      </div>
+
+      <div class="input-field col s12">
+        <input id="password" type="password" required="" class="validate">
+        <label for="password" class="">Password</label>
+      </div>
+
+      <div class="row">
+        <div class="input-field col s12 m12 l12  login-text button">
+          <input type="checkbox" id="remember_me">
+          <label for="remember_me">Remember me</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12 right-align">
+          <button class="btn waves-effect waves-light light-blue" type="submit">Submit
+            <i class="material-icons right">send</i>
+          </button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s6 m6 l6">
+          <p class="margin medium-small">
+            <a class="button">Register Now!</a>
+          </p>
+        </div>
+        <div class="input-field col s6 m6 l6">
+          <p class="margin right-align medium-small">
+            <a class="button">Forgot password ?</a>
+          </p>
+        </div>
+      </div>
+    </form>
+  </div>
 </div>

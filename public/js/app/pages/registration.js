@@ -15,7 +15,7 @@
 
     function main() {
         $('#username').focus();
-        $('#login_form').submit(doLogin);
+        //$('#login_form').submit(doLogin);
     }
 
     function doLogin(e){

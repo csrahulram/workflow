@@ -1,4 +1,4 @@
-.login-container{
+.registration-container{
     top: 50%;
     left: 50%;
     width: 100%;
@@ -9,7 +9,7 @@
     transform: translateX(-50%) translateY(-50%);
 }
 
-.login-form-text{
+.registration-form-text{
     font-size: 28px;
     font-weight:100;
 }

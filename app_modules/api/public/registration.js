@@ -3,6 +3,30 @@ checking the unique validation and thus registers the date to database.*/
 
 var _db;
 var _app;
+// var nodemailer = require('nodemailer');
+
+// var transporter = nodemailer.createTransport({
+//   service: 'gmail',
+//   auth: {
+//     user: 'csrahulram@gmail.com',
+//     pass: '5*EmptyPocket'
+//   }
+// });
+
+// var mailOptions = {
+//   from: 'csrahulram@gmail.com',
+//   to: 'rahulaccgame',
+//   subject: 'Sending Email using Node.js',
+//   text: 'That was easy!'
+// };
+
+// transporter.sendMail(mailOptions, function(error, info){
+//   if (error) {
+//     console.log(error);
+//   } else {
+//     console.log('Email sent: ' + info.response);
+//   }
+// });
 
 module.exports = (app, urlencodedParser, db) => {
     _db = db;

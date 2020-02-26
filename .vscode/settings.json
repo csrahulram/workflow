@@ -1,0 +1,10 @@
+{
+    "prettier.singleQuote": true,
+    "typescript.format.semicolons": "insert",
+    "typescript.implementationsCodeLens.enabled": true,
+    "typescript.locale": "en",
+    "typescript.referencesCodeLens.enabled": true,
+    "typescript.referencesCodeLens.showOnAllFunctions": true,
+    "editor.autoClosingOvertype": "always",
+    "prettier.jsxSingleQuote": true
+}

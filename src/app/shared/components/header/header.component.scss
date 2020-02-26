@@ -1,0 +1,43 @@
+:host{
+    position: sticky;
+    display: block;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 50px;
+}
+
+header {
+  height: 50px;
+  /* background: #23b8f6; */
+}
+
+.navigation {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.logo {
+  background-image: url('~/assets/png/icons8-right-button-filled-50.png');
+  width: 167px;
+  height: 40px;
+  margin-top: 5px;
+  background-size: 40px 40px;
+  color: white;
+  line-height: 40px;
+  padding-left: 55px;
+  font-size: 24px;
+  background-repeat: no-repeat;
+  font-weight: 100;
+}
+
+.header-menu {
+  line-height: 50px;
+  color: white;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.header-menu:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}

@@ -6,6 +6,7 @@
     "express": "nodemon app.js",
     "mongod": "mongod --dbpath ./database",
     "ubuntu": "gnome-terminal -- bash -c 'mkdir database' && gnome-terminal -- bash -c 'npm run mongod' && gnome-terminal -- bash -c 'npm run express' && gnome-terminal -- bash -c 'npm run ng'",
+    "windows": "start cmd.exe /k 'mkdir database' && start cmd.exe /k 'npm run mongod' && start cmd.exe /k 'npm run express' && start cmd.exe /k 'npm run ng'",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
